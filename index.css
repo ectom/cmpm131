@@ -34,9 +34,16 @@ body {
 }
 
 .post_title {
-    background-color: #F9AA4A;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+#deals div div {
+    background-color: #F9AA4A;
+}
+
+#events div div {
+    background-color: #4286f4;
 }
 
 .post_title h3, img {
