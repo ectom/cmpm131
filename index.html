@@ -22,7 +22,7 @@
                 <a href="#">Logout</a>
             </div>
         </div>
-        <img class="profile" src="./pics/profile-user.png" alt="profile">
+        <a href="profile.html"><img class="profile" src="./pics/profile-user.png" alt="profile"></a>
     </div>
     
 <!--This section makes the search bar -->
@@ -33,11 +33,22 @@
     <!-- The form -->
     <form class="example" action="action_page.php">
         <input type="text" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search" >
-        
+        <button class="open-button" onclick="openForm()">Filters</button>
     </form>
     <br>
     
-    
+<!--This script should help the form pop-up for filters   -->
+<script>
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+</script>
+   
+<!-- The following two scripts make the searching work for Deals/Events   -->
      <script>
         function searchDeals() {
             // Declare variables
@@ -103,7 +114,7 @@
                         <img class="verify" src="./pics/verify.png" alt="">
                         <img class="thumb" src="./pics/thumbsUp.png" alt="">
                     </div>
-                    <p>Right now there's a two for one deal downtown that'll last until next Friday.</p>
+                    <p>Right now there's a two for one deal downtown that'll last until next Friday. </p>
                 </div>
                 </li>
 
@@ -165,32 +176,50 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="title">Post Title: </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="title" placeholder="Enter title for post">
+                            <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Enter title for post" name = "postTitle" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="descriptiom">Description:</label>
+                        <label class="control-label col-sm-2" for="descriptiom" >Description:</label>
                         <div class="col-sm-10">
-                            <textarea rows="4" cols="50" type="textbox" class="form-control" id="descriptiom" placeholder="Enter a description"></textarea>
+                            <textarea onsubmit="required()" rows="4" cols="50" type="textbox" class="form-control" id="descriptiom" name = "postDescription" placeholder="Enter a description" required></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="radio">
-                                <label><input name="type" type="radio"> Deal</label>
-                                <label><input name="type" type="radio"> Event</label>
+                                <label><input onsubmit="required()" name="type" type="radio" required> Deal</label>
+                                <label><input onsubmit="required()" name="type" type="radio" required> Event</label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="submit" class="btn btn-default" onsubmit="required()" required>Submit</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+<!--This script should make sure something is filled out for submissions  -->
+<script>
+function required()
+{
+    var empt = document.forms["postTitle"]["postDescription"]["type"].value;
+    if (empt == "")
+    {
+        alert("Please fill in every category");
+    return false;
+    }
+    
+    else 
+    {
+    alert('Congrats on finishing your submission! Our editors will review it soon.');
+    return true; 
+    }
+}
+</script>
 
 </body>
 
