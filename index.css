@@ -110,3 +110,26 @@ form.example::after {
   clear: both;
   display: table;
 }
+
+/*colors the filter button*/
+.open-button {
+  background-color: #555;
+  color: white;
+}
+
+/*Hides the filter pop-up to start*/
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 50%;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the filter form */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}

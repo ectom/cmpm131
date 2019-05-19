@@ -33,18 +33,36 @@
     <!-- The form -->
     <form class="example" action="action_page.php">
         <input type="text" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search" >
+<!--     This button is for opening the filters     -->
         <button class="open-button" onclick="openForm()">Filters</button>
     </form>
     <br>
     
+    <div class="form-popup" id="filterForm">
+<!--         Pretty sure this line is crashing the page -->
+        <form action="index.html" class="form-container">
+<!--In here is where the filter stuff needs to be  -->
+
+<!--             <label for="email"><b>Email</b></label> -->
+<!--             <input type="text" placeholder="Enter Email" name="email" required> -->
+<!--  -->
+<!--             <label for="psw"><b>Password</b></label> -->
+<!--             <input type="password" placeholder="Enter Password" name="psw" required> -->
+<!--  -->
+<!--             <button type="submit" class="btn">Login</button> -->
+            
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    
 <!--This script should help the form pop-up for filters   -->
 <script>
 function openForm() {
-    document.getElementById("myForm").style.display = "block";
+    document.getElementById("filterForm").style.display = "block";
 }
 
 function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+    document.getElementById("filterForm").style.display = "none";
 }
 </script>
    
