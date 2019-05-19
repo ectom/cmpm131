@@ -32,11 +32,56 @@
 
     <!-- The form -->
     <form class="example" action="action_page.php">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..." name="search" >
+        <input type="text" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search" >
         
     </form>
     <br>
     
+    
+     <script>
+        function searchDeals() {
+            // Declare variables
+            var input, filter, ul, li, h3, i, txtValue;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("dealUL");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                h3 = li[i].getElementsByTagName("h3")[0];
+                txtValue = h3.textContent || h3.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+        
+         <script>
+            function searchEvents() {
+                // Declare variables
+                var input, filter, ul, li, h3, i, txtValue;
+                input = document.getElementById('myInput');
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("eventUL");
+                li = ul.getElementsByTagName('li');
+
+                // Loop through all list items, and hide those who don't match the search query
+                for (i = 0; i < li.length; i++) {
+                    h3 = li[i].getElementsByTagName("h3")[0];
+                    txtValue = h3.textContent || h3.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+            </script>
+        
     
     
     
@@ -50,7 +95,7 @@
     
         <div class="tab-content">
             <div id="deals" class="tab-pane fade in active">
-                <ul id="myUL">
+                <ul id="dealUL">
                 <li>
                 <div class="post">
                     <div class="post_title">
@@ -87,29 +132,11 @@
                 
     </ul>
     
-    <script>
-    function myFunction() {
-        // Declare variables
-        var input, filter, ul, li, h3, i, txtValue;
-        input = document.getElementById('myInput');
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("myUL");
-        li = ul.getElementsByTagName('li');
-
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-            h3 = li[i].getElementsByTagName("h3")[0];
-            txtValue = h3.textContent || h3.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-            }
-        }
-    }
-    </script>
+   
             </div>
             <div id="events" class="tab-pane fade">
+            <ul id="eventUL">
+            <li>
                 <div class="post">
                     <div class="post_title">
                         <h3>Event Post 1</h3>
@@ -118,7 +145,21 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
+            </li>
+             
+            <li>
+                    <div class="post">
+                        <div class="post_title">
+                            <h3>Flea Market</h3>
+                            <img class="verify" src="./pics/verify.png" alt="">
+                            <img class="thumb" src="./pics/thumbsUp.png" alt="">
+                        </div>
+                        <p>This months' flea market is in town this Sunday.</p>
+                    </div>
+            </li>
             </div>
+            </ul>
+            
             <div id="submit" class="tab-pane fade">
                 <form class="form-horizontal space">
                     <div class="form-group">
