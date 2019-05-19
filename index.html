@@ -24,31 +24,57 @@
         </div>
         <img class="profile" src="./pics/profile-user.png" alt="profile">
     </div>
+    
+<!--This section makes the search bar -->
+    <br>
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- The form -->
+    <form class="example" action="action_page.php">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..." name="search" >
+        
+    </form>
+    <br>
+    
+    
+    
+    
     <div class="">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#deals">Deals</a></li>
             <li><a data-toggle="tab" href="#events">Events</a></li>
             <li><a data-toggle="tab" href="#submit">Submit</a></li>
         </ul>
-
+        
+    
         <div class="tab-content">
             <div id="deals" class="tab-pane fade in active">
+                <ul id="myUL">
+                <li>
                 <div class="post">
                     <div class="post_title">
-                        <h3>Deal Post 1</h3>
+                        <h3>BOGO @ Surfriders</h3>                       
+                        <img class="verify" src="./pics/verify.png" alt="">
+                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
+                    </div>
+                    <p>Right now there's a two for one deal downtown that'll last until next Friday.</p>
+                </div>
+                </li>
+
+                
+                <li>
+                <div class="post">
+                    <div class="post_title">
+                       <h3>Deal Post 2</h3>
                         <img class="verify" src="./pics/verify.png" alt="">
                         <img class="thumb" src="./pics/thumbsUp.png" alt="">
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <div class="post">
-                    <div class="post_title">
-                        <h3>Deal Post 2</h3>
-                        <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
+                </li>
+                
+                <li>
                 <div class="post">
                     <div class="post_title">
                         <h3>Deal Post 3</h3>
@@ -57,6 +83,31 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
+                </li>
+                
+    </ul>
+    
+    <script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, h3, i, txtValue;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            h3 = li[i].getElementsByTagName("h3")[0];
+            txtValue = h3.textContent || h3.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+    </script>
             </div>
             <div id="events" class="tab-pane fade">
                 <div class="post">
