@@ -33,6 +33,7 @@
     <!-- The form -->
     <form class="example" action="action_page.php">
         <input type="text" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search" >
+        
 <!--     This button is for opening the filters     -->
         <button class="open-button" onclick="openForm()">Filters</button>
     </form>
@@ -40,7 +41,7 @@
     
     <div class="form-popup" id="filterForm">
 <!--         Pretty sure this line is crashing the page -->
-        <form action="index.html" class="form-container">
+        <form action="/action_page.php" class="form-container">
 <!--In here is where the filter stuff needs to be  -->
 
 <!--             <label for="email"><b>Email</b></label> -->
@@ -130,9 +131,9 @@ function closeForm() {
                     <div class="post_title">
                         <h3>BOGO @ Surfriders</h3>                       
                         <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
+                        <img class="thumb" src="./pics/thumbsUp.png" alt=""> 
                     </div>
-                    <p>Right now there's a two for one deal downtown that'll last until next Friday. </p>
+                    <p>Right now there's a two for one deal on burgers at Surfriders, that place downtown nearby Trader Joes. But it isn't a permanent thing, it's going to end pretty soon. ENDS: 5/31/2019 </p>
                 </div>
                 </li>
 
@@ -183,7 +184,7 @@ function closeForm() {
                             <img class="verify" src="./pics/verify.png" alt="">
                             <img class="thumb" src="./pics/thumbsUp.png" alt="">
                         </div>
-                        <p>This months' flea market is in town this Sunday.</p>
+                        <p>This months' flea market is in town this Sunday. There's usually a lot of weird stuff to look through like WWII knives. It's only there for a day, but it comes back every month if you miss it. ENDS 5/26/19</p>
                     </div>
             </li>
             </div>
@@ -197,12 +198,32 @@ function closeForm() {
                             <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Enter title for post" name = "postTitle" required>
                         </div>
                     </div>
+                    
+                    <form class="form-horizontal space">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="title">Start Date & End Date (If Applicable): </label>
+                            <div class="col-sm-10">
+                                <input type="date" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant start date" name = "startDate" >
+                            <input type="date" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant end date" name = "endDate" >
+             
+                            </div>
+                        </div>
+                        
+                        <form class="form-horizontal space">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="title">Location: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant locations" name = "location" required>
+                                </div>
+                            </div>
+                    
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="descriptiom" >Description:</label>
                         <div class="col-sm-10">
                             <textarea onsubmit="required()" rows="4" cols="50" type="textbox" class="form-control" id="descriptiom" name = "postDescription" placeholder="Enter a description" required></textarea>
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="radio">
@@ -211,6 +232,16 @@ function closeForm() {
                             </div>
                         </div>
                     </div>
+                    
+<!--                Need to change this so it makes actual keywords -->
+                    <form class="form-horizontal space">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="title">Tags: </label>
+                            <div class="col-sm-10">
+                                <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Put in any relevant keywords" name = "tags" required>
+                            </div>
+                        </div>
+                    
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-default" onsubmit="required()" required>Submit</button>
@@ -220,7 +251,8 @@ function closeForm() {
             </div>
         </div>
     </div>
-<!--This script should make sure something is filled out for submissions  -->
+    
+<!--This script should make sure something is filled out for submissions. It doesn't  -->
 <script>
 function required()
 {
