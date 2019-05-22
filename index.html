@@ -37,18 +37,34 @@
     <br>
 
     <div class="form-popup" id="filterForm">
-<!--         Pretty sure this line is crashing the page -->
         <form action="/action_page.php" class="form-container">
-<!--In here is where the filter stuff needs to be  -->
-
-<!--             <label for="email"><b>Email</b></label> -->
-<!--             <input type="text" placeholder="Enter Email" name="email" required> -->
-<!--  -->
-<!--             <label for="psw"><b>Password</b></label> -->
-<!--             <input type="password" placeholder="Enter Password" name="psw" required> -->
-<!--  -->
-<!--             <button type="submit" class="btn">Login</button> -->
-
+            <strong>Price</strong><br>
+            $0-$5<input type="checkbox" name="" value="$">
+            $5-$10<input type="checkbox" name="" value="$$">
+            $10-$20<input type="checkbox" name="" value="$$$"><br>
+            $20-$30<input type="checkbox" name="" value="$$$$">
+            $30-$40<input type="checkbox" name="" value="$$$$$">
+            $40+<input type="checkbox" name="" value="$$$$$$">
+            <br><br>
+            <strong>Keywords</strong><br>
+            <table>
+                <tr>
+                    <td>Free<input type="checkbox" name="" value="$"></td>
+                    <td>Sale<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr>
+                    <td>BOGO<input type="checkbox" name="" value="$"></td>
+                    <td>Half Off<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr>
+                    <td>Food<input type="checkbox" name="" value="$"></td>
+                    <td>Clearance<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr><td>Drinks<input type="checkbox" name="" value="$"></td></tr>
+                <tr><td>Produce<input type="checkbox" name="" value="$"></td></tr>
+                <tr><td>AYCE<input type="checkbox" name="" value="$"></td></tr>
+            </table>
+            <br>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
