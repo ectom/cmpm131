@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="./index.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
         </div>
         <a href="profile.html"><img class="profile" src="./pics/profile-user.png" alt="profile"></a>
     </div>
-    
+
 <!--This section makes the search bar -->
     <br>
     <!-- Load icon library -->
@@ -33,12 +34,12 @@
     <!-- The form -->
     <form class="example" action="action_page.php">
         <input type="text" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search" >
-        
+
 <!--     This button is for opening the filters     -->
         <button class="open-button" onclick="openForm()">Filters</button>
     </form>
     <br>
-    
+
     <div class="form-popup" id="filterForm">
 <!--         Pretty sure this line is crashing the page -->
         <form action="/action_page.php" class="form-container">
@@ -51,137 +52,69 @@
 <!--             <input type="password" placeholder="Enter Password" name="psw" required> -->
 <!--  -->
 <!--             <button type="submit" class="btn">Login</button> -->
-            
+
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
-    
-<!--This script should help the form pop-up for filters   -->
-<script>
-function openForm() {
-    document.getElementById("filterForm").style.display = "block";
-}
 
-function closeForm() {
-    document.getElementById("filterForm").style.display = "none";
-}
-</script>
-   
-<!-- The following two scripts make the searching work for Deals/Events   -->
-     <script>
-        function searchDeals() {
-            // Declare variables
-            var input, filter, ul, li, h3, i, txtValue;
-            input = document.getElementById('myInput');
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("dealUL");
-            li = ul.getElementsByTagName('li');
-
-            // Loop through all list items, and hide those who don't match the search query
-            for (i = 0; i < li.length; i++) {
-                h3 = li[i].getElementsByTagName("h3")[0];
-                txtValue = h3.textContent || h3.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-        </script>
-        
-         <script>
-            function searchEvents() {
-                // Declare variables
-                var input, filter, ul, li, h3, i, txtValue;
-                input = document.getElementById('myInput');
-                filter = input.value.toUpperCase();
-                ul = document.getElementById("eventUL");
-                li = ul.getElementsByTagName('li');
-
-                // Loop through all list items, and hide those who don't match the search query
-                for (i = 0; i < li.length; i++) {
-                    h3 = li[i].getElementsByTagName("h3")[0];
-                    txtValue = h3.textContent || h3.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        li[i].style.display = "";
-                    } else {
-                        li[i].style.display = "none";
-                    }
-                }
-            }
-            </script>
-        
-    
-    
-    
     <div class="">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#deals">Deals</a></li>
             <li><a data-toggle="tab" href="#events">Events</a></li>
             <li><a data-toggle="tab" href="#submit">Submit</a></li>
         </ul>
-        
-    
+
+
         <div class="tab-content">
             <div id="deals" class="tab-pane fade in active">
-                <ul id="dealUL">
-                <li>
-                <div class="post">
-                    <div class="post_title">
-                        <h3>Unlimited Wings @ Surfriders</h3>                       
-                        <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt=""> 
+                <div id="dealUL">
+                    <div class="post">
+                        <div class="post_title">
+                            <h3>Unlimited Wings @ Surfriders</h3>
+                            <img class="verify" src="./pics/verify.png" alt="">
+                            <img class="thumb" src="./pics/thumbsUp.png" alt="">
+                        </div>
+                        <p>If you go to this cafe downtown on Friday nights, you can get unlimited wings with your meal. As far as I know, this deal lasts forever, so enjoy. </p>
+                        <p>ENDS: Never <br>LOCATION: 429 Front St, Santa Cruz, CA 95060</p>
                     </div>
-                    <p>If you go to this cafe downtown on Friday nights, you can get unlimited wings with your meal. As far as I know, this deal lasts forever, so enjoy. </p>
-                    <p>ENDS: Never <br>LOCATION: 429 Front St, Santa Cruz, CA 95060</p>
-                </div>
-                </li>
 
-                
-                <li>
-                <div class="post">
-                    <div class="post_title">
-                       <h3>10 Chicken Nuggets For 1$</h3>
-                        <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
+                    <div class="post">
+                        <div class="post_title">
+                           <h3>10 Chicken Nuggets For 1$</h3>
+                            <img class="verify" src="./pics/verify.png" alt="">
+                            <img class="thumb" src="./pics/thumbsUp.png" alt="">
+                        </div>
+                        <p>Burger King is selling ten nuggets for a dollar. It doesn't taste the best, but you can get 200 nuggets for a twenty and feed everyone in you house. Only going to last through next month tho.</p>
+
+                        <p>ENDS: 6/30/19 <br>LOCATION: Any Burger King</p>
                     </div>
-                    <p>Burger King is selling ten nuggets for a dollar. It doesn't taste the best, but you can get 200 nuggets for a twenty and feed everyone in you house. Only going to last through next month tho.</p>
-                    
-                    <p>ENDS: 6/30/19 <br>LOCATION: Any Burger King</p>
-                </div>
-                </li>
-                
-                <li>
-                <div class="post">
-                    <div class="post_title">
-                        <h3> CVS downtown accepts flexis now!</h3>
-                        <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
+
+                    <div class="post">
+                        <div class="post_title">
+                            <h3> CVS downtown accepts flexis now!</h3>
+                            <img class="verify" src="./pics/verify.png" alt="">
+                            <img class="thumb" src="./pics/thumbsUp.png" alt="">
+                        </div>
+                        <p>GUYS THIS IS NOT A MEME! Now I can afford school supllies! Thank god!</p>
+                        <p>ENDS: Never <br>LOCATION: The CVS on Baystreet</p>
                     </div>
-                    <p>GUYS THIS IS NOT A MEME! Now I can afford school supllies! Thank god!</p>
-                    <p>ENDS: Never <br>LOCATION: The CVS on Baystreet</p>
+
+
                 </div>
-                </li>
-                
-    </ul>
-    
+
             </div>
             <div id="events" class="tab-pane fade">
-            <ul id="eventUL">
-            <li>
-                <div class="post">
-                    <div class="post_title">
-                        <h3>Flea Market</h3>
-                        <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
+                <div id="eventUL">
+                    <div class="post">
+                        <div class="post_title">
+                            <h3>Flea Market</h3>
+                            <img class="verify" src="./pics/verify.png" alt="">
+                            <img class="thumb" src="./pics/thumbsUp.png" alt="">
+                        </div>
+                        <p>This months' flea market is in town this Sunday. There's usually a lot of weird stuff to look through like WWII knives. It's only there for a day, but it comes back every month if you miss it.</p>
+                            <p>ENDS 5/26/19<br> LOCATION: Downtown </p>
                     </div>
-                    <p>This months' flea market is in town this Sunday. There's usually a lot of weird stuff to look through like WWII knives. It's only there for a day, but it comes back every month if you miss it.</p>
-                        <p>ENDS 5/26/19<br> LOCATION: Downtown </p>
-                </div>
-            </li>
-             
-            <li>
+
                     <div class="post">
                         <div class="post_title">
 <!--                         This is an example of a bad post. Make this one downvoted to hell -->
@@ -192,10 +125,9 @@ function closeForm() {
                         <p>There's an annual chili cook off down by the boardwalk that everyone can enter. Although, now that I think about it that might've been like five months ago. Boy, do I like chili. Does anyone know where you could get some chili? </p>
                         <p>ENDS  10/26/19<br> LOCATION: The Boardwalk </p>
                     </div>
-            </li>
+                </div>
             </div>
-            </ul>
-            
+
             <div id="submit" class="tab-pane fade">
                 <form class="form-horizontal space">
                     <div class="form-group">
@@ -204,17 +136,17 @@ function closeForm() {
                             <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Enter title for post" name = "postTitle" required>
                         </div>
                     </div>
-                    
+
                     <form class="form-horizontal space">
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="title">Start Date & End Date (If Applicable): </label>
                             <div class="col-sm-10">
                                 <input type="date" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant start date" name = "startDate" >
                             <input type="date" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant end date" name = "endDate" >
-             
+
                             </div>
                         </div>
-                        
+
                         <form class="form-horizontal space">
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="title">Location: </label>
@@ -222,14 +154,14 @@ function closeForm() {
                                     <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant locations" name = "location" required>
                                 </div>
                             </div>
-                    
+
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="descriptiom" >Description:</label>
                         <div class="col-sm-10">
                             <textarea onsubmit="required()" rows="4" cols="50" type="textbox" class="form-control" id="descriptiom" name = "postDescription" placeholder="Enter a description" required></textarea>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="radio">
@@ -238,7 +170,7 @@ function closeForm() {
                             </div>
                         </div>
                     </div>
-                    
+
 <!--                Need to change this so it makes actual keywords -->
                     <form class="form-horizontal space">
                         <div class="form-group">
@@ -247,7 +179,7 @@ function closeForm() {
                                 <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Put in any relevant keywords" name = "tags" required>
                             </div>
                         </div>
-                    
+
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-default" onsubmit="required()" required>Submit</button>
@@ -257,25 +189,6 @@ function closeForm() {
             </div>
         </div>
     </div>
-    
-<!--This script should make sure something is filled out for submissions. It doesn't  -->
-<script>
-function required()
-{
-    var empt = document.forms["postTitle"]["postDescription"]["type"].value;
-    if (empt == "")
-    {
-        alert("Please fill in every category");
-    return false;
-    }
-    
-    else 
-    {
-    alert('Congrats on finishing your submission! Our editors will review it soon.');
-    return true; 
-    }
-}
-</script>
 
 </body>
 

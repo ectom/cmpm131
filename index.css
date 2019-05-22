@@ -42,11 +42,11 @@ body {
     border-radius: 5px;
 }
 
-#deals div div {
+#deals div div div{
     background-color: #F9AA4A;
 }
 
-#events div div {
+#events div div div{
     background-color: #4286f4;
 }
 
@@ -101,7 +101,7 @@ form.example input[type=text] {
   background: #f1f1f1;
   border: 1px solid grey;
   position: relative;
-  
+
 }
 
 /* Clear floats */
