@@ -21,10 +21,6 @@ body {
     padding-left: 40%;
 }
 
-.profileNav {
-  padding-left: 5%;
-}
-
 .profile {
     display: inline-block;
     width: 200px;
@@ -48,14 +44,6 @@ body {
 
 #events div div div{
     background-color: #4286f4;
-}
-
-#favorites div div {
-  background-color: #F9AA4A;
-}
-
-#yourPosts div div {
-  background-color: #4286f4;
 }
 
 .post_title h3, img {
