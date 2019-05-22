@@ -8,6 +8,20 @@ function closeForm() {
     document.getElementById("filterForm").style.display = "none";
 }
 
+function upVote(a){
+    y = "likes"+a
+    var x = document.getElementById(y).innerHTML;
+    x++;
+    document.getElementById(y).innerHTML = x;
+}
+
+function downVote(a){
+    y = "dislikes"+a
+    var x = document.getElementById(y).innerHTML;
+    x++;
+    document.getElementById(y).innerHTML = x;
+}
+
 // searching work for Deals
 function searchDeals() {
     // Declare variables

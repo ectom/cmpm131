@@ -46,7 +46,7 @@ body {
     background-color: #4286f4;
 }
 
-.post_title h3, img {
+.post_title h3, img, button{
     display: inline-block;
 }
 
@@ -56,26 +56,39 @@ body {
     left: 15px;
 }
 
-.post_title img {
+/* .post_title img {
     float: right;
     width: 30px;
     height: 30px;
     margin-top: 10px;
-}
+} */
 
-.verify {
+/* .verify {
     margin-right: 20px;
-}
+} */
 
 .post p {
     padding: 20px;
     padding-bottom: 15px;
 }
 
+.clickables img{
+    float: right;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.clickables{
+    float: right;
+    width: 160px;
+    height: 30px;
+    margin-top: 10px;
+}
+
 .space {
     margin-top: 50px;
 }
-
 
 * {
   box-sizing: border-box;
