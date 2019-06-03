@@ -30,7 +30,7 @@
 
     <!--This section makes the search bar -->
     <form class="example" action="action_page.php">
-        <input type="text" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search" >
+        <input type="text" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search">
         <!--This button is for opening the filters-->
         <button class="open-button" onclick="openForm()">Filters</button>
     </form>
@@ -60,9 +60,15 @@
                     <td>Food<input type="checkbox" name="" value="$"></td>
                     <td>Clearance<input type="checkbox" name="" value="$"></td>
                 </tr>
-                <tr><td>Drinks<input type="checkbox" name="" value="$"></td></tr>
-                <tr><td>Produce<input type="checkbox" name="" value="$"></td></tr>
-                <tr><td>AYCE<input type="checkbox" name="" value="$"></td></tr>
+                <tr>
+                    <td>Drinks<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr>
+                    <td>Produce<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr>
+                    <td>AYCE<input type="checkbox" name="" value="$"></td>
+                </tr>
             </table>
             <br>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
@@ -80,7 +86,7 @@
         <div class="tab-content">
             <div id="deals" class="tab-pane fade in active">
                 <div id="dealUL">
-                    <div class="post">
+                    <div class="post module">
                         <div class="post_title">
                             <h3>Unlimited Wings @ Surfriders</h3>
                             <div class="clickables">
@@ -89,22 +95,26 @@
                                 <button onclick="upVote(1)"><img class="thumb" src="./pics/Like.png" alt=""></button>
                                 <span id="dislikes1">0</span>
                                 <button type="button" name="button" onclick="downVote(1)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+                                <a role="button" class="collapsed" data-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapseExample"><img src="./pics/expand.png" alt=""></a>
                             </div>
                         </div>
-                        <p>If you go to this cafe downtown on Friday nights, you can get unlimited wings with your meal. As far as I know, this deal lasts forever, so enjoy. </p>
-                        <p>ENDS: Never <br>LOCATION: 429 Front St, Santa Cruz, CA 95060</p>
+                        <span class="collapse" id="collapse1" aria-expanded="false">
+                            <p>If you go to this cafe downtown on Friday nights, you can get unlimited wings with your meal. As far as I know, this deal lasts forever, so enjoy. </p>
+                            <p>ENDS: Never <br>LOCATION: 429 Front St, Santa Cruz, CA 95060</p>
+                        </span>
+
                     </div>
 
                     <div class="post">
                         <div class="post_title">
-                           <h3>10 Chicken Nuggets For 1$</h3>
-                           <div class="clickables">
-                               <img class="verify" src="./pics/verify.png" alt="">
-                               <span id="likes2">0</span>
-                               <button onclick="upVote(2)"><img class="thumb" src="./pics/Like.png" alt=""></button>
-                               <span id="dislikes2">0</span>
-                               <button type="button" name="button" onclick="downVote(2)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
-                           </div>
+                            <h3>10 Chicken Nuggets For 1$</h3>
+                            <div class="clickables">
+                                <img class="verify" src="./pics/verify.png" alt="">
+                                <span id="likes2">0</span>
+                                <button onclick="upVote(2)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+                                <span id="dislikes2">0</span>
+                                <button type="button" name="button" onclick="downVote(2)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+                            </div>
 
                         </div>
                         <p>Burger King is selling ten nuggets for a dollar. It doesn't taste the best, but you can get 200 nuggets for a twenty and feed everyone in you house. Only going to last through next month tho.</p>
@@ -145,12 +155,12 @@
                             </div>
                         </div>
                         <p>This months' flea market is in town this Sunday. There's usually a lot of weird stuff to look through like WWII knives. It's only there for a day, but it comes back every month if you miss it.</p>
-                            <p>ENDS 5/26/19<br> LOCATION: Downtown </p>
+                        <p>ENDS 5/26/19<br> LOCATION: Downtown </p>
                     </div>
 
                     <div class="post">
                         <div class="post_title">
-<!--                         This is an example of a bad post. Make this one downvoted to hell -->
+                            <!--                         This is an example of a bad post. Make this one downvoted to hell -->
                             <h3>Chili Cook-off</h3>
                             <div class="clickables">
                                 <img class="verify" src="./pics/verify.png" alt="">
@@ -160,8 +170,9 @@
                                 <button type="button" name="button" onclick="downVote(5)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
                             </div>
                         </div>
-                        <p>There's an annual chili cook off down by the boardwalk that everyone can enter. Although, now that I think about it that might've been like five months ago. Boy, do I like chili. Does anyone know where you could get some chili? </p>
-                        <p>ENDS  10/26/19<br> LOCATION: The Boardwalk </p>
+                        <p>There's an annual chili cook off down by the boardwalk that everyone can enter. Although, now that I think about it that might've been like five months ago. Boy, do I like chili. Does anyone know where you could get some
+                            chili? </p>
+                        <p>ENDS 10/26/19<br> LOCATION: The Boardwalk </p>
                     </div>
                 </div>
             </div>
@@ -171,7 +182,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="title">Post Title: </label>
                         <div class="col-sm-10">
-                            <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Enter title for post" name = "postTitle" required>
+                            <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Enter title for post" name="postTitle" required>
                         </div>
                     </div>
 
@@ -179,8 +190,8 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="title">Start Date & End Date (If Applicable): </label>
                             <div class="col-sm-10">
-                                <input type="date" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant start date" name = "startDate" >
-                            <input type="date" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant end date" name = "endDate" >
+                                <input type="date" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant start date" name="startDate">
+                                <input type="date" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant end date" name="endDate">
 
                             </div>
                         </div>
@@ -189,41 +200,41 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="title">Location: </label>
                                 <div class="col-sm-10">
-                                    <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant locations" name = "location" required>
+                                    <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Enter any relevant locations" name="location" required>
                                 </div>
                             </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="descriptiom" >Description:</label>
-                        <div class="col-sm-10">
-                            <textarea onsubmit="required()" rows="4" cols="50" type="textbox" class="form-control" id="descriptiom" name = "postDescription" placeholder="Enter a description" required></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="radio">
-                                <label><input onsubmit="required()" name="type" type="radio" required> Deal</label>
-                                <label><input onsubmit="required()" name="type" type="radio" required> Event</label>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="descriptiom">Description:</label>
+                                <div class="col-sm-10">
+                                    <textarea onsubmit="required()" rows="4" cols="50" type="textbox" class="form-control" id="descriptiom" name="postDescription" placeholder="Enter a description" required></textarea>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-<!--                Need to change this so it makes actual keywords -->
-                    <form class="form-horizontal space">
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="title">Tags: </label>
-                            <div class="col-sm-10">
-                                <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Put in any relevant keywords" name = "tags" required>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="radio">
+                                        <label><input onsubmit="required()" name="type" type="radio" required> Deal</label>
+                                        <label><input onsubmit="required()" name="type" type="radio" required> Event</label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" onsubmit="required()" required>Submit</button>
-                        </div>
-                    </div>
-                </form>
+                            <!--                Need to change this so it makes actual keywords -->
+                            <form class="form-horizontal space">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="title">Tags: </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" onsubmit="required()" class="form-control" id="title" placeholder="Put in any relevant keywords" name="tags" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-default" onsubmit="required()" required>Submit</button>
+                                    </div>
+                                </div>
+                            </form>
             </div>
         </div>
     </div>

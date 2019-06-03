@@ -27,7 +27,18 @@ body {
     height: 200px;
 }
 
+.module span.collapse[aria-expanded="false"] {
+    display: block;
+    height: 20px !important;
+    overflow: hidden;
+}
+
+.module span.collapsing[aria-expanded="false"] {
+    height: 20px !important;
+}
+
 .post {
+    display: block;
     margin-top: 10px;
     border: 1px solid black;
     border-radius: 5px;
@@ -55,17 +66,6 @@ body {
     top: -5px;
     left: 15px;
 }
-
-/* .post_title img {
-    float: right;
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
-} */
-
-/* .verify {
-    margin-right: 20px;
-} */
 
 .post p {
     padding: 20px;
