@@ -124,6 +124,7 @@ function addPost(post){
             </span>`;
         document.getElementById('eventUL').appendChild(div);
     }
+    alert("Your post titled: "+post["title"]+" has been added!")
 }
 
 // This script should make sure something is filled out for submissions. It doesn't

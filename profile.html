@@ -9,7 +9,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/profile.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
 	<script src="./js/profile.js"></script>
+	<script src="./js/index.js"></script>
 </head>
 
 
@@ -37,49 +39,83 @@
 
 		<div class="tab-content">
 			<div id="favorites" class="tab-pane fade in active">
-				<div class="post">
+				<div class="post module">
 					<div class="post_title deal">
 						<h3>Unlimited Wings @ Surfriders</h3>
-						<img class="verify" src="./pics/verify.png" alt="">
-						<img class="thumb" src="./pics/thumbsUp.png" alt="">
+						<div class="clickables">
+							<a role="button" onclick="dfavorite(1)"><img class="favorite" id="dfavorite1" src="./pics/fav.png" alt=""></a>
+							<span id="dLikes1">0</span>
+							<button onclick="dUpVote(1)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+							<span id="dDislikes1">0</span>
+							<button type="button" name="button" onclick="dDownVote(1)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+							<a role="button" class="collapsed" data-toggle="collapse" href="#dcollapse1" aria-expanded="false" onclick="dcolspand(1)" aria-controls="collapseExample"><img id="dexpand1" src="./pics/collapse.png" alt=""></a>
+						</div>
 					</div>
-					<p>If you go to this cafe downtown on Friday nights, you can get unlimited wings with your meal. As far as I know, this deal lasts forever, so enjoy. </p>
-                        <p>ENDS: Never<br>COST: Under 10$<br>LOCATION: 429 Front St, Santa Cruz, CA 95060 <br>TAGS: Unlimited Wings, Friday</p>
+					<span class="collapse" id="dcollapse1" aria-expanded="false">
+						<p>If you go to this cafe downtown on Friday nights, you can get unlimited wings with your meal. As far as I know, this deal lasts forever, so enjoy. </p>
+						<p>ENDS: Never <br>LOCATION: 429 Front St, Santa Cruz, CA 95060</p>
+					</span>
+
 				</div>
 
-				<div class="post">
+				<div class="post module">
 					<div class="post_title event">
-<!--                         This is an example of a bad post. Make this one downvoted to hell -->
+						<!--                         This is an example of a bad post. Make this one dDownVoted to hell -->
 						<h3>Chili Cook-off</h3>
-						<img class="verify" src="./pics/verify.png" alt="">
-						<img class="thumb" src="./pics/thumbsUp.png" alt="">
+						<div class="clickables">
+							<a role="button" onclick="efavorite(2)"><img class="favorite" id="efavorite2" src="./pics/fav.png" alt=""></a>
+							<span id="eLikes2">0</span>
+							<button onclick="eUpVote(2)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+							<span id="eDislikes2">0</span>
+							<button type="button" name="button" onclick="eDownVote(2)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+							<a role="button" class="collapsed" data-toggle="collapse" href="#ecollapse2" aria-expanded="false" onclick="ecolspand(2)" aria-controls="collapseExample"><img id="eexpand2" src="./pics/collapse.png" alt=""></a>
+						</div>
 					</div>
-					<p>There's an annual chili cook off down by the boardwalk that everyone can enter. Although, now that I think about it that might've been like five months ago. Boy, do I like chili. Does anyone know where you could get some chili? </p>
-					<p>ENDS  10/26/19<br> COST: 10-20$ <br> LOCATION: The Boardwalk<br>TAGS: Boardwalk, Chili </p>
+					<span class="collapse" id="ecollapse2" aria-expanded="false">
+						<p>There's an annual chili cook off down by the boardwalk that everyone can enter. Although, now that I think about it that might've been like five months ago. Boy, do I like chili. Does anyone know where you could get some
+							chili? </p>
+						<p>ENDS 10/26/19<br> LOCATION: The Boardwalk </p>
+					</span>
 				</div>
 
 			</div>
 
 			<div id="posts" class="tab-pane fade">
-				<div class="post">
+				<div class="post module">
 					<div class="post_title event">
 						<h3>Flea Market</h3>
-						<img class="verify" src="./pics/verify.png" alt="">
-						<img class="thumb" src="./pics/thumbsUp.png" alt="">
+						<div class="clickables">
+							<a role="button" onclick="efavorite(1)"><img class="favorite" id="efavorite1" src="./pics/fav.png" alt=""></a>
+							<span id="eLikes1">0</span>
+							<button onclick="eUpVote(1)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+							<span id="eDislikes1">0</span>
+							<button type="button" name="button" onclick="eDownVote(1)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+							<a role="button" class="collapsed" data-toggle="collapse" href="#ecollapse1" aria-expanded="false" onclick="ecolspand(1)" aria-controls="collapseExample"><img id="eexpand1" src="./pics/collapse.png" alt=""></a>
+						</div>
 					</div>
-					<p>This months' flea market is in town this Sunday. There's usually a lot of weird stuff to look through like WWII knives. It's only there for a day, but it comes back every month if you miss it.</p>
-						<p>ENDS 5/26/19<br>COST: Free<br> LOCATION: Downtown<br>TAGS: Flea Market, Old, Vintage </p>
+					<span class="collapse" id="ecollapse1" aria-expanded="false">
+						<p>This months' flea market is in town this Sunday. There's usually a lot of weird stuff to look through like WWII knives. It's only there for a day, but it comes back every month if you miss it.</p>
+						<p>ENDS 5/26/19<br> LOCATION: Downtown </p>
+					</span>
 				</div>
 
-				<div class="post">
+				<div class="post module">
 					<div class="post_title deal">
 						<h3>10 Chicken Nuggets For 1$</h3>
-						<img class="verify" src="./pics/verify.png" alt="">
-						<img class="thumb" src="./pics/thumbsUp.png" alt="">
-					</div>
-					<p>Burger King is selling ten nuggets for a dollar. It doesn't taste the best, but you can get 200 nuggets for a twenty and feed everyone in you house. Only going to last through next month tho.</p>
+						<div class="clickables">
+							<a role="button" onclick="dfavorite(2)"><img class="favorite" id="dfavorite2" src="./pics/fav.png" alt=""></a>
+							<span id="dLikes2">0</span>
+							<button onclick="dUpVote(2)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+							<span id="dDislikes2">0</span>
+							<button type="button" name="button" onclick="dDownVote(2)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+							<a role="button" class="collapsed" data-toggle="collapse" href="#dcollapse2" aria-expanded="false" onclick="dcolspand(2)" aria-controls="collapseExample"><img id="dexpand2" src="./pics/collapse.png" alt=""></a>
+						</div>
 
-					<p>ENDS: 6/30/19<br>COST: Under 10$<br> LOCATION: Any Burger King <br>TAGS: 10 for a dollar, fast food, limited</p>
+					</div>
+					<span class="collapse" id="dcollapse2" aria-expanded="false">
+						<p>Burger King is selling ten nuggets for a dollar. It doesn't taste the best, but you can get 200 nuggets for a twenty and feed everyone in you house. Only going to last through next month tho.</p>
+						<p>ENDS: 6/30/19<br>COST: Under 10$<br> LOCATION: Any Burger King <br>TAGS: 10 for a dollar, fast food, limited</p>
+					</span>
 				</div>
 			</div>
 		</div>

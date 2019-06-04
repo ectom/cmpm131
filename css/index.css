@@ -27,6 +27,17 @@ body {
     height: 200px;
 }
 
+.searchFilter {
+    display: block;
+}
+
+.searchFilter form {
+    display: inline-block;
+}
+.filter{
+    float: right;
+}
+
 .module span.collapse[aria-expanded="false"] {
     display: block;
     height: 50px !important;

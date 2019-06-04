@@ -30,12 +30,16 @@ favorite<!DOCTYPE html>
     </div>
     <br>
 
-    <!--This section makes the search bar -->
-    <form class="example" action="action_page.php">
-        <input type="text" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search">
-        <!--This button is for opening the filters-->
-        <button class="open-button" onclick="openForm()">Filters</button>
-    </form>
+    <div class="searchFilter">
+        <!--This section makes the search bar -->
+        <form class="search" action="action_page.php">
+            <input type="text" size="180" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search">
+        </form>
+        <!--This is for opening the filters-->
+        <form class="filter" action="action_page.php">
+            <button class="open-button" onclick="openForm()">Filters</button>
+        </form>
+    </div>
     <br>
 
     <div class="form-popup" id="filterForm">
