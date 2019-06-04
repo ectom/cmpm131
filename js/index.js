@@ -11,15 +11,29 @@ function closeForm() {
     document.getElementById("filterForm").style.display = "none";
 }
 
-function upVote(a) {
-    y = "likes" + a
+function dUpVote(a) {
+    y = "dLikes" + a
     var x = document.getElementById(y).innerHTML;
     x++;
     document.getElementById(y).innerHTML = x;
 }
 
-function downVote(a) {
-    y = "dislikes" + a
+function dDownVote(a) {
+    y = "dDislikes" + a
+    var x = document.getElementById(y).innerHTML;
+    x++;
+    document.getElementById(y).innerHTML = x;
+}
+
+function eUpVote(a) {
+    y = "eLikes" + a
+    var x = document.getElementById(y).innerHTML;
+    x++;
+    document.getElementById(y).innerHTML = x;
+}
+
+function eDownVote(a) {
+    y = "eDislikes" + a
     var x = document.getElementById(y).innerHTML;
     x++;
     document.getElementById(y).innerHTML = x;
@@ -166,8 +180,18 @@ function required() {
     }
 }
 
-function colspand(num) {
-    var id = 'expand' + num;
+function dcolspand(num) {
+    var id = 'dexpand' + num;
+    if(document.getElementById(id).src == "file:///Users/ethantom/Documents/School/CMPM%20131/pics/collapse.png") {
+        document.getElementById(id).src = "./pics/expand.png";
+    } else {
+        document.getElementById(id).src = "./pics/collapse.png"
+    }
+
+}
+
+function ecolspand(num) {
+    var id = 'eexpand' + num;
     if(document.getElementById(id).src == "file:///Users/ethantom/Documents/School/CMPM%20131/pics/collapse.png") {
         document.getElementById(id).src = "./pics/expand.png";
     } else {
