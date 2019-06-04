@@ -77,7 +77,7 @@ function addPost(post){
             <div class='post_title'>
                 <h3>`+ post['title'] +`</h3>
                 <div class='clickables'>
-                    <img class='verify' src='./pics/verify.png' alt=''>
+                    <img class='verify' src='./pics/fav.png' alt=''>
                     <span id='likes`+ numDeals +`'>0</span>
                     <button onclick='upVote(`+ numDeals +`)'><img class='thumb' src='./pics/Like.png' alt=''></button>
                     <span id='dislikes`+ numDeals +`'>0</span>
@@ -94,7 +94,7 @@ function addPost(post){
             <div class='post_title'>
                 <h3>`+ post['title'] +`</h3>
                 <div class=''clickables''>
-                    <img class='verify' src='./pics/verify.png' alt=''>
+                    <img class='verify' src='./pics/fav.png' alt=''>
                     <span id='likes`+ numEvents +`'>0</span>
                     <button onclick='upVote(`+ numEvents +`)'><img class='thumb' src='./pics/Like.png' alt=''></button>
                     <span id='dislikes`+ numEvents +`'>0</span>
@@ -162,7 +162,16 @@ function required() {
                 document.getElementsByName("cost")[i].checked = false;
             }
         }
-
         addPost(post);
     }
+}
+
+function colspand(num) {
+    var id = 'expand' + num;
+    if(document.getElementById(id).src == "file:///Users/ethantom/Documents/School/CMPM%20131/pics/collapse.png") {
+        document.getElementById(id).src = "./pics/expand.png";
+    } else {
+        document.getElementById(id).src = "./pics/collapse.png"
+    }
+
 }
