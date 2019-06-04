@@ -21,17 +21,20 @@ body {
     padding-left: 40%;
 }
 
-.profileNav {
-  padding-left: 5%;
-}
-
 .profile {
     display: inline-block;
     width: 200px;
     height: 200px;
 }
 
+.module span.collapse[aria-expanded="false"] {
+    display: block;
+    height: 50px !important;
+    overflow: hidden;
+}
+
 .post {
+    display: block;
     margin-top: 10px;
     border: 1px solid black;
     border-radius: 5px;
@@ -42,23 +45,15 @@ body {
     border-radius: 5px;
 }
 
-#deals div div {
+#deals div div div{
     background-color: #F9AA4A;
 }
 
-#events div div {
+#events div div div{
     background-color: #4286f4;
 }
 
-#favorites div div {
-  background-color: #F9AA4A;
-}
-
-#yourPosts div div {
-  background-color: #4286f4;
-}
-
-.post_title h3, img {
+.post_title h3, img, button, a{
     display: inline-block;
 }
 
@@ -68,26 +63,28 @@ body {
     left: 15px;
 }
 
-.post_title img {
-    float: right;
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
-}
-
-.verify {
-    margin-right: 20px;
-}
-
 .post p {
     padding: 20px;
     padding-bottom: 15px;
 }
 
+.clickables img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+
+.clickables{
+    float: right;
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+}
+
 .space {
     margin-top: 50px;
 }
-
 
 * {
   box-sizing: border-box;
@@ -101,7 +98,7 @@ form.example input[type=text] {
   background: #f1f1f1;
   border: 1px solid grey;
   position: relative;
-  
+
 }
 
 /* Clear floats */
@@ -123,15 +120,24 @@ form.example::after {
 .form-popup {
   display: none;
   position: fixed;
-  bottom: 50%;
-  right: 15px;
+  width:400px;
+  right: 145px;
+  top: 150px;
   border: 3px solid #f1f1f1;
   z-index: 9;
+  background-color: white;
 }
 
 /* Add styles to the filter form */
 .form-container {
-  max-width: 300px;
+  max-width: 400px;
   padding: 10px;
-  background-color: white;
+}
+
+.column1{
+    margin-right: 30px;
+}
+
+.column2{
+    margin-left: 30px;
 }

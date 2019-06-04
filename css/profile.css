@@ -21,10 +21,6 @@ body {
     padding-left: 40%;
 }
 
-.profileNav {
-  padding-left: 5%;
-}
-
 .profile {
     display: inline-block;
     width: 200px;
@@ -42,21 +38,14 @@ body {
     border-radius: 5px;
 }
 
-#deals div div {
-    background-color: #F9AA4A;
-}
-
-#events div div {
-    background-color: #4286f4;
-}
-
-#favorites div div {
+.deal {
   background-color: #F9AA4A;
 }
 
-#yourPosts div div {
+.event {
   background-color: #4286f4;
 }
+
 
 .post_title h3, img {
     display: inline-block;
@@ -86,52 +75,4 @@ body {
 
 .space {
     margin-top: 50px;
-}
-
-
-* {
-  box-sizing: border-box;
-}
-
-/* Style the search field */
-form.example input[type=text] {
-  padding: 10px;
-  width: 80%;
-  font-size: 17px;
-  background: #f1f1f1;
-  border: 1px solid grey;
-  position: relative;
-  
-}
-
-/* Clear floats */
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/*colors the filter button*/
-.open-button {
-  background-color: #F9AA4A;
-  color: black;
-  width: 100px;
-  height: 35px;
-}
-
-/*Hides the filter pop-up to start*/
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 50%;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
-
-/* Add styles to the filter form */
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
 }

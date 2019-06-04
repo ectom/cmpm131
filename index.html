@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+favorite<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+    <script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script src="./js/index.js"></script>
 </head>
 
 <body>
     <div class="header">
-        <img class="logo" src="./pics/SearchLogo.png" alt="search logo">
+        <img class="logo" src="./pics/Logo.png" alt="search logo">
         <div>
             <h1>Dealio</h1>
             <h2>Santa Cruz, CA</h2>
@@ -22,8 +26,57 @@
                 <a href="#">Logout</a>
             </div>
         </div>
-        <img class="profile" src="./pics/profile-user.png" alt="profile">
+        <a href="profile.html"><img class="profile" src="./pics/profile.png" alt="profile"></a>
     </div>
+    <br>
+
+    <!--This section makes the search bar -->
+    <form class="example" action="action_page.php">
+        <input type="text" id="myInput" onkeyup="searchDeals(); searchEvents()" placeholder="Search..." name="search">
+        <!--This button is for opening the filters-->
+        <button class="open-button" onclick="openForm()">Filters</button>
+    </form>
+    <br>
+
+    <div class="form-popup" id="filterForm">
+        <form action="/action_page.php" class="form-container">
+            <strong>Price</strong><br>
+            $0-$5<input type="checkbox" name="" value="$">
+            $5-$10<input type="checkbox" name="" value="$$">
+            $10-$20<input type="checkbox" name="" value="$$$"><br>
+            $20-$30<input type="checkbox" name="" value="$$$$">
+            $30-$40<input type="checkbox" name="" value="$$$$$">
+            $40+<input type="checkbox" name="" value="$$$$$$">
+            <br><br>
+            <strong>Keywords</strong><br>
+            <table>
+                <tr>
+                    <td>Free<input type="checkbox" name="" value="$"></td>
+                    <td>Sale<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr>
+                    <td>BOGO<input type="checkbox" name="" value="$"></td>
+                    <td>Half Off<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr>
+                    <td>Food<input type="checkbox" name="" value="$"></td>
+                    <td>Clearance<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr>
+                    <td>Drinks<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr>
+                    <td>Produce<input type="checkbox" name="" value="$"></td>
+                </tr>
+                <tr>
+                    <td>AYCE<input type="checkbox" name="" value="$"></td>
+                </tr>
+            </table>
+            <br>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
     <div class="">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#deals">Deals</a></li>
@@ -31,73 +84,179 @@
             <li><a data-toggle="tab" href="#submit">Submit</a></li>
         </ul>
 
+
         <div class="tab-content">
             <div id="deals" class="tab-pane fade in active">
-                <div class="post">
-                    <div class="post_title">
-                        <h3>Deal Post 1</h3>
-                        <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="post">
-                    <div class="post_title">
-                        <h3>Deal Post 2</h3>
-                        <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="post">
-                    <div class="post_title">
-                        <h3>Deal Post 3</h3>
-                        <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div id="events" class="tab-pane fade">
-                <div class="post">
-                    <div class="post_title">
-                        <h3>Event Post 1</h3>
-                        <img class="verify" src="./pics/verify.png" alt="">
-                        <img class="thumb" src="./pics/thumbsUp.png" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div id="submit" class="tab-pane fade">
-                <form class="form-horizontal space">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="title">Post Title: </label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="title" placeholder="Enter title for post">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="descriptiom">Description:</label>
-                        <div class="col-sm-10">
-                            <textarea rows="4" cols="50" type="textbox" class="form-control" id="descriptiom" placeholder="Enter a description"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="radio">
-                                <label><input name="type" type="radio"> Deal</label>
-                                <label><input name="type" type="radio"> Event</label>
+                <div id="dealUL">
+                    <div class="post module">
+                        <div class="post_title">
+                            <h3>Unlimited Wings @ Surfriders</h3>
+                            <div class="clickables">
+                                <a role="button" onclick="dfavorite(1)"><img class="favorite" id="dfavorite1" src="./pics/fav.png" alt=""></a>
+                                <span id="dLikes1">0</span>
+                                <button onclick="dUpVote(1)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+                                <span id="dDislikes1">0</span>
+                                <button type="button" name="button" onclick="dDownVote(1)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+                                <a role="button" class="collapsed" data-toggle="collapse" href="#dcollapse1" aria-expanded="false" onclick="dcolspand(1)" aria-controls="collapseExample"><img id="dexpand1" src="./pics/collapse.png" alt=""></a>
                             </div>
                         </div>
+                        <span class="collapse" id="dcollapse1" aria-expanded="false">
+                            <p>If you go to this cafe downtown on Friday nights, you can get unlimited wings with your meal. As far as I know, this deal lasts forever, so enjoy. </p>
+                            <p>ENDS: Never <br>LOCATION: 429 Front St, Santa Cruz, CA 95060</p>
+                        </span>
+
+                    </div>
+
+                    <div class="post module">
+                        <div class="post_title">
+                            <h3>10 Chicken Nuggets For 1$</h3>
+                            <div class="clickables">
+                                <a role="button" onclick="dfavorite(2)"><img class="favorite" id="dfavorite2" src="./pics/fav.png" alt=""></a>
+                                <span id="dLikes2">0</span>
+                                <button onclick="dUpVote(2)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+                                <span id="dDislikes2">0</span>
+                                <button type="button" name="button" onclick="dDownVote(2)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+                                <a role="button" class="collapsed" data-toggle="collapse" href="#dcollapse2" aria-expanded="false" onclick="dcolspand(2)" aria-controls="collapseExample"><img id="dexpand2" src="./pics/collapse.png" alt=""></a>
+                            </div>
+
+                        </div>
+                        <span class="collapse" id="dcollapse2" aria-expanded="false">
+                            <p>Burger King is selling ten nuggets for a dollar. It doesn't taste the best, but you can get 200 nuggets for a twenty and feed everyone in you house. Only going to last through next month tho.</p>
+                            <p>ENDS: 6/30/19<br>COST: Under 10$<br> LOCATION: Any Burger King <br>TAGS: 10 for a dollar, fast food, limited</p>
+                        </span>
+                    </div>
+
+                    <div class="post module">
+                        <div class="post_title">
+                            <h3> CVS downtown accepts flexis now!</h3>
+                            <div class="clickables">
+                                <a role="button" onclick="dfavorite(3)"><img class="favorite" id="dfavorite3" src="./pics/fav.png" alt=""></a>
+                                <span id="dLikes3">0</span>
+                                <button onclick="dUpVote(3)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+                                <span id="dDislikes3">0</span>
+                                <button type="button" name="button" onclick="dDownVote(3)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+                                <a role="button" class="collapsed" data-toggle="collapse" href="#dcollapse3" aria-expanded="false" onclick="dcolspand(3)" aria-controls="collapseExample"><img id="dexpand3" src="./pics/collapse.png" alt=""></a>
+                            </div>
+                        </div>
+                        <span class="collapse" id="dcollapse3" aria-expanded="false">
+                            <p>GUYS THIS IS NOT A MEME! Now I can afford school supllies! Thank god!</p>
+                            <p>ENDS: Never<br>COST: Free<br>LOCATION: The CVS on Baystreet<br>Tags: Flexis</p>
+                        </span>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div id="events" class="tab-pane fade">
+                <div id="eventUL">
+                    <div class="post module">
+                        <div class="post_title">
+                            <h3>Flea Market</h3>
+                            <div class="clickables">
+                                <a role="button" onclick="efavorite(1)"><img class="favorite" id="efavorite1" src="./pics/fav.png" alt=""></a>
+                                <span id="eLikes1">0</span>
+                                <button onclick="eUpVote(1)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+                                <span id="eDislikes1">0</span>
+                                <button type="button" name="button" onclick="eDownVote(1)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+                                <a role="button" class="collapsed" data-toggle="collapse" href="#ecollapse1" aria-expanded="false" onclick="ecolspand(1)" aria-controls="collapseExample"><img id="eexpand1" src="./pics/collapse.png" alt=""></a>
+                            </div>
+                        </div>
+                        <span class="collapse" id="ecollapse1" aria-expanded="false">
+                            <p>This months' flea market is in town this Sunday. There's usually a lot of weird stuff to look through like WWII knives. It's only there for a day, but it comes back every month if you miss it.</p>
+                            <p>ENDS 5/26/19<br> LOCATION: Downtown </p>
+                        </span>
+                    </div>
+
+                    <div class="post module">
+                        <div class="post_title">
+                            <!--                         This is an example of a bad post. Make this one dDownVoted to hell -->
+                            <h3>Chili Cook-off</h3>
+                            <div class="clickables">
+                                <a role="button" onclick="efavorite(2)"><img class="favorite" id="efavorite2" src="./pics/fav.png" alt=""></a>
+                                <span id="eLikes2">0</span>
+                                <button onclick="eUpVote(2)"><img class="thumb" src="./pics/Like.png" alt=""></button>
+                                <span id="eDislikes2">0</span>
+                                <button type="button" name="button" onclick="eDownVote(2)"><img class="thumb" src="./pics/Dislike.png" alt=""></button>
+                                <a role="button" class="collapsed" data-toggle="collapse" href="#ecollapse2" aria-expanded="false" onclick="ecolspand(2)" aria-controls="collapseExample"><img id="eexpand2" src="./pics/collapse.png" alt=""></a>
+                            </div>
+                        </div>
+                        <span class="collapse" id="ecollapse2" aria-expanded="false">
+                            <p>There's an annual chili cook off down by the boardwalk that everyone can enter. Although, now that I think about it that might've been like five months ago. Boy, do I like chili. Does anyone know where you could get some
+                                chili? </p>
+                            <p>ENDS 10/26/19<br> LOCATION: The Boardwalk </p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="submit" class="tab-pane fade">
+                <form id="submission" class="form-horizontal space">
+                    <!-- <div class="form-group"> -->
+                    <label class="control-label col-sm-2" for="title">Post Title: </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="Enter title for post" id="postTitle" required>
+                    </div>
+                    <!-- </div> -->
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="title">Start Date & End Date (If Applicable): </label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" placeholder="Enter any relevant start date" id="startDate">
+                            <input type="date" class="form-control" placeholder="Enter any relevant end date" id="endDate">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="title">Location: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Enter any relevant locations" id="location" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="description">Description:</label>
+                        <div class="col-sm-10">
+                            <textarea rows="4" cols="50" type="textbox" class="form-control" id="postDescription" placeholder="Enter a description" required></textarea>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Submit</button>
+                        <div class="col-sm-offset-2 col-sm-10 radio">
+                            <label><input name="postType" value="deal" type="radio" required> Deal</label>
+                            <label><input name="postType" value="event" type="radio" required> Event</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="cost">Cost:</label>
+                        <div class="radio">
+                            <label><input name="cost" value="Free" type="radio" required>Free </label>
+                            <label><input name="cost" value="Under $10" type="radio" required>Under $10 </label>
+                            <label><input name="cost" value="$10-20" type="radio" required>$10-20 </label>
+                            <label><input name="cost" value="$20-60" type="radio" required>$20-60 </label>
+                            <label><input name="cost" value="$60-100" type="radio" required>$60-100 </label>
+                            <label><input name="cost" value="$100+" type="radio" required>$100+ </label>
+                        </div>
+
+                    </div>
+                    <!--                Need to change this so it makes actual keywords -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="title">Tags: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Put in any relevant keywords seperated by commas" id="tags" data-role="tagsinput" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-default" onclick="required()" required>Submit</button>
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+    </div>
+
+
     </div>
 
 </body>
